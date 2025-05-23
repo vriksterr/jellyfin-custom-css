@@ -1,3 +1,368 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* Global Variables */
+:root {
+  --bg-color: #18181849;
+  --blur: blur(16px) saturate(180%);
+  --border-color: linear-gradient(45deg, rgba(46, 46, 46, 1) 0%, rgba(46, 46, 46,1) 41%, rgba(46, 46, 46, 1) 57%, rgba(46, 46, 46,1) 100%);
+  --card-bg: #101010;
+  --indicator-bg: #10101094;
+  --transparent-bg: #10101000;
+}
+
+/* Global Styles */
+html {
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif !important;
+  margin: 0;
+  padding: 0;
+}
+
+/* Elements with transparency and blur effects */
+.skinHeader.semiTransparent,
+.skinHeader,
+.mainDrawer,
+.actionSheet,
+select:enabled,
+option {
+  background-color: var(--bg-color);
+  backdrop-filter: var(--blur) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
+
+}
+.skinHeader,
+.skinHeader.semiTransparent,
+.skinHeader-withBackground.osdHeader {
+  background: transparent !important;
+  background-color: transparent !important;
+  backdrop-filter: blur(8px) saturate(100%) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Border styling for certain elements */
+.skinHeader,
+.actionSheet,
+.mainDrawer {
+  border: 1px solid transparent;
+  border-image-slice: 1;
+  border-image-source: var(--border-color);
+}
+
+/* Specific styles for .skinHeader */
+.skinHeader {
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  border-radius: 5px;
+}
+
+/* Form elements */
+select:enabled,
+option {
+  border-style: solid;
+  border-width: 1px;
+}
+
+/* Hidden elements */
+.selectVideoContainer {
+  display: none !important;
+}
+
+/* Style for .skinHeader-withBackground.osdHeader */
+.skinHeader-withBackground.osdHeader {
+  border: 0;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  background: linear-gradient(180deg, hsla(0, 0%, 6%, .75), hsla(0, 0%, 6%, 0));
+  color: #eee;
+  height: 7.5em;
+  pointer-events: none;
+  position: relative;
+  transition: opacity .3sease-out;
+  z-index: 1;
+}
+
+/* Overlay elements */
+.cardOverlayContainer,
+.cardScalables,
+.cardPadder {
+  overlay: none;
+}
+
+.cardOverlayContainer {
+  background-color: var(--transparent-bg);
+}
+
+/* List and transition effects */
+.listItem {
+  transition: 0.3s all ease-in-out;
+}
+
+.listItem:hover {
+  background-color: #00a5dc28;
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  backdrop-filter: var(--blur);
+}
+
+/* Card styles */
+.cardBox {
+  box-sizing: border-box;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 18.5px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+  padding: 25px;
+  transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+.itemsContainer > .card > .cardBox:hover {
+  border: 2px solid #FAF0E6; /* Blue border */
+  transform: translateY(-5px);
+}
+
+/* Text styles */
+.cardText {
+  font-size: large;
+  padding: 2%;
+}
+
+.cardText-secondary {
+  font-size: small;
+}
+
+/* Margin adjustments for overflow elements */
+.overflowBackdropCard[data-index="0"],
+.overflowPortraitCard[data-index="0"],
+.overflowSquareCard[data-index="0"] {
+  margin-left: 1.5vw;
+}
+
+/* Primary content styling */
+.detailPagePrimaryContainer {
+  background-color: var(--transparent-bg);
+  display: inline-table;
+  left: 5%;
+  padding-left: 5%;
+  z-index: 2;
+}
+
+/* Layout adjustments for desktop */
+.layout-desktop .detailPageContent {
+  padding-left: 5%;
+}
+
+.layout-desktop .detailPagePrimaryContent {
+  width: 45%;
+}
+
+.layout-desktop .detailPageSecondaryContainer {
+  background-color: var(--transparent-bg);
+  margin: 0 0 1.25em 0;
+}
+
+.layout-desktop .itemDetailsGroup {
+  margin-top: 0;
+}
+
+/* Desktop background settings */
+html.preload.layout-desktop {
+  background-color: #191819;
+}
+
+.layout-desktop .detailLogo {
+  background-position: top left;
+  left: 5%;
+}
+
+.layout-desktop .itemBackdrop {
+  background-attachment: scroll;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+  right: -20%;
+  width: 80vw;
+}
+
+/* Backdrop container */
+.backdropContainer {
+  height: 100vh;
+  left: 20%;
+  position: absolute;
+  width: 80vw;
+}
+
+.layout-desktop .backgroundContainer {
+  background: url("https://raw.githubusercontent.com/alexyle/jellyfin-theme/main/glassmorphism/mask.png");
+  background-size: cover;
+  height: 100vh;
+  margin-left: 20%;
+  position: absolute;
+  width: 80vw;
+}
+
+.layout-desktop .detailPageWrapperContainer {
+  margin-top: -65vh;
+}
+
+/* Hide unnecessary elements */
+.layout-desktop .detailImageContainer .card,
+.layout-desktop .itemTags,
+.layout-desktop .itemName.originalTitle {
+  display: none;
+}
+
+.layout-desktop .itemName,
+.layout-mobile .itemName {
+  font-weight: normal;
+}
+
+.layout-desktop a.overview-expand.emby-button {
+  margin: 0;
+  padding: 0;
+}
+
+
+/* Status indicators */
+.countIndicator {
+  background-color: white !important;
+  color: black !important;
+  font-weight: bold;
+  font-size: 12px;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  border-radius: 50%;
+  padding: 0;
+
+  /* 🔥 Shadow effect */
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.2),   /* subtle drop shadow */
+    0 0 8px rgba(0, 0, 0, 0.3);     /* ambient outer shadow */
+}
+
+/* Hover effects for menu options */
+.actionSheetMenuItem:hover,
+.navMenuOption:hover {
+  background-color: #00a5dc28;
+}
+
+/* Floating action button (FAB) for cards */
+.cardOverlayFab-primary {
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background: linear-gradient(rgba(32, 32, 32, 0.1), rgba(32, 32, 32, 0.1)) padding-box,
+              var(--border-color) border-box;
+  background-color: rgba(0, 164, 220, 0.4);
+  backdrop-filter: var(--blur);
+  border: 2px solid transparent;
+}
+
+.cardOverlayFab-primary:hover {
+  background: linear-gradient(rgba(0, 164, 220, 0.1), rgba(0, 164, 220, 0.1)) padding-box,
+              var(--border-color) border-box;
+}
+
+/* Progress bars and inner card styles */
+.itemProgressBarForeground {
+  background-color: white;
+  border-radius: 4px;
+  height: 100%;
+  box-shadow: 20 0 4px white;
+}
+
+.innerCardFooter > .itemProgressBar {
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  backdrop-filter: blur(16px) saturate(180%);
+  background-color: #18181849;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  margin-left: 20px;
+  overflow: hidden;
+  position: relative;
+  right: 10px;
+
+  height: 6px; /* ✅ Slim height */
+  padding: 0;  /* ✅ Remove extra thickness */
+}
+
+/* Headings */
+h2 {
+  font-weight: 700;
+}
+
+/* Desktop play button styles */
+.layout-desktop .btnPlay {
+  background-color: white;
+  color: black; /* <-- this sets the default text color */
+  border: 1px solid black;
+  border-radius: 2em;
+}
+
+.layout-desktop .btnPlay:hover {
+  background-color: #f0f0f0;
+  color: black;
+  transform: translateX(5px);
+}
+
+
+.layout-desktop .btnPlay::after {
+  color: black; /* optional, to ensure pseudo-content text is also black */
+  content: attr(title);
+  margin: 0 10px 0 2px;
+}
+
+
+.layout-desktop .btnPlay.detailButton {
+  flex-direction: row;
+}
+
+/* Media Query for hover effects */
+@media (hover: hover) and (pointer: fine) {
+  .paper-icon-button-light:hover:not(:disabled) {
+    background-color: #00a5dc11;
+    color: #00a5dcec;
+  }
+}
+
+/* Other styles */
+.raised {
+  border-radius: 4em;
+}
+
+#btnShutdown {
+  background-color: #bb4a4a;
+}
+
+.paperList {
+  border-radius: 1em;
+}
+
+
+.sliderContainer {
+  height: 1em;
+}
+
+
+.cardBox:not(.visualCardBox) .cardPadder{
+  background-color: #00000000;
+}
+
+.cardImageContainer {
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+}
+
+
+
+
+
+
+
+
 /*
  * Jellyfin Slideshow by M0RPH3US v3.0.0
  */
@@ -730,17 +1095,11 @@
   }
 }
 
-
-
-
-
-/* Shift favorite button right when hovering play button */
-.play-button:hover + .favorite-button {
-  transform: translateX(8px);
-  transition: transform 0.3s ease;
-}
-
-/* Ensure favorite button transitions smoothly back */
 .favorite-button {
-  transition: transform 0.3s ease;
+  transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smoother curve */
 }
+
+.play-button:hover ~ .favorite-button {
+  transform: translateX(10px);
+}
+
