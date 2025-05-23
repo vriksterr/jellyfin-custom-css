@@ -35,7 +35,7 @@ option {
 .skinHeader,
 .actionSheet,
 .mainDrawer {
-  border: 1px solid transparent;
+  border: 0px solid transparent;
   border-image-slice: 1;
   border-image-source: var(--border-color);
 }
@@ -52,7 +52,7 @@ option {
 select:enabled,
 option {
   border-style: solid;
-  border-width: 1px;
+  border-width: 0px;
 }
 
 /* Hidden elements */
