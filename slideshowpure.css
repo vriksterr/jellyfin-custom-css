@@ -729,3 +729,18 @@
     top: calc(50% + 15vh);
   }
 }
+
+
+
+
+
+/* Shift favorite button right when hovering play button */
+.play-button:hover + .favorite-button {
+  transform: translateX(8px);
+  transition: transform 0.3s ease;
+}
+
+/* Ensure favorite button transitions smoothly back */
+.favorite-button {
+  transition: transform 0.3s ease;
+}
