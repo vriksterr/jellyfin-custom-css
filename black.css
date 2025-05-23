@@ -4,7 +4,7 @@
 :root {
   --bg-color: #18181849;
   --blur: blur(16px) saturate(180%);
-  --border-color: linear-gradient(45deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.3) 0%);
+  --border-color: linear-gradient(45deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.1) 41%, rgba(0, 0, 0, 0.1) 57%, rgba(0, 0, 0, 0.3) 10%);
   --card-bg: #101010;
   --indicator-bg: #10101094;
   --transparent-bg: #10101000;
@@ -35,7 +35,7 @@ option {
 .skinHeader,
 .actionSheet,
 .mainDrawer {
-  border: 0px solid transparent;
+  border: 1px solid transparent;
   border-image-slice: 1;
   border-image-source: var(--border-color);
 }
@@ -52,7 +52,7 @@ option {
 select:enabled,
 option {
   border-style: solid;
-  border-width: 0px;
+  border-width: 1px;
 }
 
 /* Hidden elements */
