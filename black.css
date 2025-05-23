@@ -4,7 +4,8 @@
 :root {
   --bg-color: #18181849;
   --blur: blur(16px) saturate(180%);
-  --border-color: linear-gradient(45deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.1) 41%, rgba(255, 255, 255, 0.1) 57%, rgba(255, 255, 255, 0.3) 100%);
+  <!----border-color: linear-gradient(45deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.1) 41%, rgba(255, 255, 255, 0.1) 57%, rgba(255, 255, 255, 0.3) 100%);-->
+  --border-color:000000;
   --card-bg: #101010;
   --indicator-bg: #10101094;
   --transparent-bg: #10101000;
