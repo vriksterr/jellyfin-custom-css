@@ -2,12 +2,12 @@
 
 /* Global Variables */
 :root {
-  --bg-color: #18181849;
+  --bg-color: black;
   --blur: blur(16px) saturate(180%);
   --border-color: black;
-  --card-bg: #101010;
-  --indicator-bg: #10101094;
-  --transparent-bg: #10101000;
+  --card-bg: black;
+  --indicator-bg: black;
+  --transparent-bg: black;
 }
 
 /* Global Styles */
