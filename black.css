@@ -4,7 +4,7 @@
 :root {
   --bg-color: #18181849;
   --blur: blur(16px) saturate(180%);
-  --border-color: black;
+  --border-color: linear-gradient(45deg, rgba(46, 46, 46, 1) 0%, rgba(46, 46, 46,1) 41%, rgba(46, 46, 46, 1) 57%, rgba(46, 46, 46,1) 100%);
   --card-bg: #101010;
   --indicator-bg: #10101094;
   --transparent-bg: #10101000;
@@ -98,16 +98,17 @@ option {
 
 /* Card styles */
 .cardBox {
-  background: linear-gradient(var(--card-bg), var(--card-bg)) padding-box,
-              var(--border-color) border-box;
-  border: 1px solid transparent;
-  border-radius: 15px;
+  box-sizing: border-box;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 18.5px;
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
   padding: 25px;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out;
 }
 
 .itemsContainer > .card > .cardBox:hover {
+  border: 2px solid #FAF0E6; /* Blue border */
   transform: translateY(-5px);
 }
 
@@ -157,7 +158,7 @@ option {
 
 /* Desktop background settings */
 html.preload.layout-desktop {
-  background-color: #181818;
+  background-color: #191819;
 }
 
 .layout-desktop .detailLogo {
@@ -277,22 +278,25 @@ h2 {
 
 /* Desktop play button styles */
 .layout-desktop .btnPlay {
-  background: linear-gradient(var(--card-bg), var(--card-bg)) padding-box,
-              var(--border-color) border-box;
-  border: 1px solid transparent;
+  background-color: white;
+  color: black; /* <-- this sets the default text color */
+  border: 1px solid black;
   border-radius: 2em;
 }
 
 .layout-desktop .btnPlay:hover {
-  background-color: #00a5dc28;
+  background-color: #f0f0f0;
+  color: black;
   transform: translateX(5px);
 }
 
+
 .layout-desktop .btnPlay::after {
-  color: white;
+  color: black; /* optional, to ensure pseudo-content text is also black */
   content: attr(title);
   margin: 0 10px 0 2px;
 }
+
 
 .layout-desktop .btnPlay.detailButton {
   flex-direction: row;
